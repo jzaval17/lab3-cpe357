@@ -36,7 +36,7 @@ int main(int argc, char * argv[]) {
             printf("%s", last);
             free(last);
         }
-        
+        printf("\n");
         free(line);
         fclose(file);
         return 0;
