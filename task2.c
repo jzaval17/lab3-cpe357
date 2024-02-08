@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#define BUFFER_SIZE 4096
+#define BUFFER_SIZE 8192
 int main(){
     char buffer[BUFFER_SIZE];
     int file = open("10mb.txt", O_RDONLY);
