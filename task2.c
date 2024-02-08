@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#define BUFFER_SIZE 1
+#define BUFFER_SIZE 2
 int main(){
     char buffer[BUFFER_SIZE];
     int file = open("theme.txt", O_RDONLY);
