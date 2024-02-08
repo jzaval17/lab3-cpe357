@@ -12,7 +12,6 @@ int main(){
         return 1;
     }
     while (read(file, buffer, BUFFER_SIZE) > 0) {// Read the file character by character
-        write(STDOUT_FILENO, buffer, BUFFER_SIZE);// Write the character to standard output
     }
     close(file);
     return 0;
