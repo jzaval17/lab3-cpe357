@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#define BUFFER_SIZE 1
+#define BUFFER_SIZE 8192
 int main(){
     char buffer[BUFFER_SIZE];
     int file = open("theme.txt", O_RDONLY);
@@ -12,6 +12,7 @@ int main(){
         return 1;
     }
     while (read(file, buffer, BUFFER_SIZE) > 0) {// Read the file character by character
+    //wont print anything
     }
     close(file);
     return 0;
