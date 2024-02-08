@@ -6,7 +6,7 @@
 #define BUFFER_SIZE 1024
 int main(){
     char buffer[BUFFER_SIZE];
-    int file = open("(/jzaval17/lib/locale/locale-archive", O_RDONLY);
+    int file = open("theme.txt", O_RDONLY);
     if (file < 0) { //if the file does not exist, print an error message
         perror("Error opening %s");
         return 1;
