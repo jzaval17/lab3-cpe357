@@ -6,15 +6,15 @@
 #define BUFFER_SIZE 8192
 int main(){
     char buffer[BUFFER_SIZE];
-    int file = open("10mb.txt", O_RDONLY);
+    FILE *file = fopen("10mb.txt", O_RDONLY);
     if (file < 0) { //if the file does not exist, print an error message
         perror("Error opening %s");
         return 1;
     }
-    while (read(file, buffer, BUFFER_SIZE) > 0) {// Read the file character by character
+    while (fread(buffer, 1, BUFFER_SIZE, file) > 0) {// Read the file character by character
     //wont print anything
     }
-    close(file);
+    fclose(file);
     return 0;
 
 }
