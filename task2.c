@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#define BUFFER_SIZE 8192
+#define BUFFER_SIZE 1
 int main(int argc, char *argv[]) {
     char buffer[BUFFER_SIZE];
     if (argc < 2) {
