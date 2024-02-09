@@ -4,17 +4,20 @@
 #include <stdio.h>
 
 #define BUFFER_SIZE 8192
-int main(){
+int main(int argc, char *argv[]) {
     char buffer[BUFFER_SIZE];
-    FILE *file = fopen("10mb.txt", O_RDONLY);
-    if (file < 0) { //if the file does not exist, print an error message
-        perror("Error opening %s");
+    if (argc < 2) {
+        fprintf(stderr, "Usage: %s <file>\n", argv[0]);
         return 1;
     }
-    while (fread(buffer, 1, BUFFER_SIZE, file) > 0) {// Read the file character by character
-    //wont print anything
+    int file = open(argv[1], O_RDONLY);
+    if (file < 0) { // If the file does not exist, print an error message including the file name
+        fprintf(stderr, "Error opening %s\n", argv[1]);
+        return 1;
     }
-    fclose(file);
+    while (read(file, buffer, BUFFER_SIZE) > 0) {
+        // Process buffer here if needed
+    }
+    close(file);
     return 0;
-
 }

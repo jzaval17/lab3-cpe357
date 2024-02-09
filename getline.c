@@ -5,7 +5,7 @@
 #include <errno.h> // Include for errno and perror
 
 
-int main(int argc, char * argv[]) {
+int main(int argc, char * argv[]) {//argc is the number of arguments, argv is the array of arguments
     FILE *file;
     char *line = NULL;
     size_t len = 0;
@@ -28,11 +28,11 @@ int main(int argc, char * argv[]) {
         secondLast = last;// Store the last line
         last = strdup(line);// Duplicate the current line
         }
-        if (secondLast != NULL) {
+        if (secondLast != NULL) { //if the second last line is not empty, print it
             printf("%s", secondLast);
             free(secondLast);
         }
-        if (last != NULL) {
+        if (last != NULL) { //if the last line is not empty, print it
             printf("%s", last);
             free(last);
         }
